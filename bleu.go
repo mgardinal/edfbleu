@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	lastDataUpdate   = "09/08/2023"
+	lastDataUpdate   = "23/10/2023"
 	pricesDateFormat = "02/01/2006"
 )
 
@@ -68,12 +68,12 @@ func getBasePrice(datetime time.Time) float64 {
 func getHCPrice(datetime time.Time) float64 {
 	// are we within hc range ?
 	var hc bool
-	if datetime.Hour() == 23 && datetime.Minute() >= 30 {
+	if datetime.Hour() == 22 && datetime.Minute() >= 36 {
 		hc = true
 	} else {
-		if datetime.Hour() < 7 {
+		if datetime.Hour() < 6 {
 			hc = true
-		} else if datetime.Hour() == 7 && datetime.Minute() < 30 {
+		} else if datetime.Hour() == 6 && datetime.Minute() < 36 {
 			hc = true
 		}
 	}
